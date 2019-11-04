@@ -1,13 +1,18 @@
 body {
-    background-color: grey;
+    background-color: whitesmoke;
 }
 #h1 {
- background-color:white; margin: auto;
+ margin-top: 20%;
+ margin-bottom: 02%;
  text-align: center;
- color:grey;
+ color:rgb(80, 75, 75);
 }
-.Everything {
+#h2 {
+    padding-top: 05%;
+}
+.Everythingin {
 background-color: white;
+float:center;
 }
 .body {
 background-color: burlywood;
