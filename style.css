@@ -13,7 +13,12 @@ body {
 }
 .Everythingin {
 background-color: white;
-float:center;
+text-align: center;
+  margin: auto;
+  width: 60%;
+  border-style: dashed;
+  border-color: teal;
+  padding: 10px;
 }
 .body {
 background-color: burlywood;
