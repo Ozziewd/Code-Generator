@@ -18,14 +18,16 @@ background-color: white;
 text-align: center;
   margin: auto;
   width: 60%;
+  height: 40%;
   padding: 10px;
-
 }
 .codedis{
     border-style: dashed;
     border-color: grey;
     margin: 03%;
     padding-bottom: 10%;
+    width: 80%;
+    resize: none;
 }
 .body {
 background-color: burlywood;
@@ -38,7 +40,7 @@ margin-right: 20%;
 border-radius: 20%;
 }
 #button2 {
-background-color:lightgray;
+background-color:rgb(192, 22, 22);
 color: white;
 padding: 03% 09%;
 border-radius: 20%;
