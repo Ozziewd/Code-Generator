@@ -7,7 +7,7 @@ function start(){ //function start runs when the user clicks on the button gener
   var length = prompt('How many characters would you like your password. Must be between 8 and 128 characters') // asks user for how long the user wants there password and stores it to variable (length)
   length = parseInt(length)// convert user input from a string 
   console.log(length)
-  if (length<8 || length > 128){//checks if user input is between 8 and 128 and if it is not runs function start again
+  if (length < 8 || length > 128){//checks if user input is between 8 and 128 and if it is not runs function start again
     alert('Has to be between 8 and 128 characters')
     start() 
   }
@@ -46,7 +46,7 @@ function characters(length){//generates an array of array based on user input
 function generate(passLength){ // creates a random password based on array of arrays
     var password ="" // creates a variable to hold random characters generated in for loop
   for (var l = 0; l < passLength; l++) { // loops for how long user wants password
-    var whatArray =Math.floor(Math.random()*charactersInPass.length)// generates random number between 0 and the number of type of characters they want
+    var whatArray = Math.floor(Math.random()*charactersInPass.length)// generates random number between 0 and the number of type of characters they want
     password += charactersInPass[whatArray][Math.floor(Math.random()*charactersInPass[whatArray].length)] // selects a random character in array of arrays
   }
   document.getElementById('password').value =password // displays password in textarea
