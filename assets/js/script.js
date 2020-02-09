@@ -1,4 +1,3 @@
-//var everyCha = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@"]
 var nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var lowerletters=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var upperletters=[ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
@@ -45,12 +44,10 @@ function characters(length){//generates an array of array based on user input
 }
 
 function generate(passLength){ // creates a random password based on array of arrays
-    console.log(passLength, charactersInPass)
     var password ="" // creates a variable to hold random characters generated in for loop
   for (var l = 0; l < passLength; l++) { // loops for how long user wants password
-    var whatArray =Math.floor(Math.random()*charactersInPass.length)// generates random number between 0 and the number of type of charachters they want
+    var whatArray =Math.floor(Math.random()*charactersInPass.length)// generates random number between 0 and the number of type of characters they want
     password += charactersInPass[whatArray][Math.floor(Math.random()*charactersInPass[whatArray].length)] // selects a random character in array of arrays
   }
-  console.log(password)
   document.getElementById('password').value =password // displays password in textarea
 }
