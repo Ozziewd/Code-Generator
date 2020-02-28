@@ -2,24 +2,24 @@ var nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var upperLetters = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var special = [ "!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@"]
-function start() { //function start runs when the user clicks on the button generate button
-  var length = prompt('How many characters would you like your password. Must be between 8 and 128 characters') // asks user for how long the user wants there password and stores it to variable (length)
-  length = parseInt(length)// convert user input from a string 
-  console.log(length)
+var charactersInPass = []
+function start() { //function start runs when the user clicks on "get password" button
+  var length = prompt('How many characters would you like your password. Must be between 8 and 128 characters')
+  length = parseInt(length)// convert user input from a string to an integer
   if (length < 8 || length > 128){//checks if user input is between 8 and 128 and if it is not runs function start again
     alert('Has to be between 8 and 128 characters')
     start() 
   }
-  else if(isNaN(length) ){ //checks if user input is a number and if its not runs function start
+  else if(isNaN(length) ){ //checks if user input is a number and if not it runs function start
     alert('Please input a number')
     start()
   }
-  else{// if meets validation start character function 
+  else{// if meets validation start characterTypes function 
     characterTypes(length)
   }
 }
-function characterTypes(length){//generates an array of array based on user input 
-  charactersInPass =[] // setup variable to hold arrays of characters user wants
+function characterTypes(length){//generates an array to hold other arrays based on user input of which characters the user wants
+  charactersInPass = [] // setup variable to hold arrays of characters user wants
   if(confirm('Do you want numbers?')){// asks if user wants numbers and if true pushes numbers array into characters In Pass
     charactersInPass.push(nums)
   }
@@ -27,10 +27,10 @@ function characterTypes(length){//generates an array of array based on user inpu
     charactersInPass.push(special)
   }
   if(confirm('Do you want lower case letters?')){// asks if user wants lowercase characters and if true pushes lowercase letters array into characters In Pass
-    charactersInPass.push(lowerletters)
+    charactersInPass.push(lowerLetters)
   }
   if(confirm('Do you want upper case letters?')){//asks if user wants upper case characters and if true pushes upper case characters array into characters In Pass
-    charactersInPass.push(upperletters)
+    charactersInPass.push(upperLetters)
   }
 
   if(charactersInPass.length < 2){ //confirming that the user has selected two character types
@@ -42,11 +42,11 @@ function characterTypes(length){//generates an array of array based on user inpu
   }
 }
 
-function generate(passLength){ // creates a random password based on array of arrays
+function generate(length){ // creates a random password based on array of arrays
     var password = "" // creates a variable to hold random characters generated in for loop
-  for (var l = 0; l < passLength; l++) { // loops for how long user wants password
-    var whatArray = Math.floor(Math.random()*charactersInPass.length)// generates random number between 0 and the number of type of characters they want
-    password += charactersInPass[whatArray][Math.floor(Math.random()*charactersInPass[whatArray].length)] // selects a random character in array of arrays
+  for (var l = 0; l < length; l++) { // loops for how long user wants password
+    var userInputArray = Math.floor(Math.random()*charactersInPass.length)// generates random number between 0 and the number of type of characters they want
+    password += charactersInPass[userInputArray][Math.floor(Math.random()*charactersInPass[userInputArray].length)] // selects a random character in array of arrays
   }
   document.getElementById('password').value = password // displays password in textarea
 }
