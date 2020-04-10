@@ -55,4 +55,5 @@ function copy() {
   var copyNewPass = document.getElementById("password")
   copyNewPass.select()
   document.execCommand("copy");
+  alert("Your New Password Has Been Copied")
 }
