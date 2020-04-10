@@ -50,3 +50,9 @@ function generate(length){ // creates a random password based on array of arrays
   }
   document.getElementById('password').value = password // displays password in textarea
 }
+
+function copy() {
+  var copyNewPass = document.getElementById("password")
+  copyNewPass.select()
+  document.execCommand("copy");
+}
